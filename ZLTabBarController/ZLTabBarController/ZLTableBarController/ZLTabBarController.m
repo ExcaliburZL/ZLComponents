@@ -7,7 +7,6 @@
 //
 
 #import "ZLTabBarController.h"
-#import "ZLTabBar.h"
 NSUInteger tabbarItemsCount = 0;
 
 @implementation ZLTabBarController
@@ -23,8 +22,8 @@ NSUInteger tabbarItemsCount = 0;
 
 - (void)setTabBarItemsTextAttributes
 {
-    NSDictionary *normalDic = @{NSForegroundColorAttributeName:[UIColor grayColor] };
-    NSDictionary *selectedDic = @{NSForegroundColorAttributeName:[UIColor blackColor] };
+    NSDictionary *normalDic   = @{NSForegroundColorAttributeName:[UIColor grayColor]};
+    NSDictionary *selectedDic = @{NSForegroundColorAttributeName:[UIColor blackColor]};
     
     UITabBarItem *tabBarItem = [UITabBarItem appearance];
     //TODO:general status ( custom text color )
@@ -73,9 +72,9 @@ NSUInteger tabbarItemsCount = 0;
     
 }
 
-- (void)setTabBar
-{
-    [self setValue:[ZLTabBar class] forKey:@"tabBar"];
-}
+//- (void)setTabBar
+//{
+//    [self setValue:[ZLTabBar class] forKey:@"tabBar"];
+//}
 
 @end
