@@ -26,25 +26,7 @@
     
     ZLConfig *config = [[ZLConfig alloc]init];
     NSArray *naviArray = [config navigationControllers:@[one,two]];
-    [self setViewControllers:naviArray];
-}
-
-
-
-- (void)setViewControllers:(NSArray *)array
-{
-    ZLTabBarController *tabBarController = [[ZLTabBarController alloc]init];
-    [self setTabBarForControllers:tabBarController];
-    [tabBarController setViewControllers:array];
-    self.tabBarController = tabBarController;
-    [self addChildViewController:tabBarController];
-
-    [self.view addSubview:tabBarController.view];
-}
-
-- (void) setTabBarForControllers:(ZLTabBarController *) tabBarController
-{
-    //config tabBar for each ViewController
+    
     NSDictionary *dic1 = @{
                            ZLTabBarItemTitle:@"Item1",
                            ZLTabBarItemImage:@"message_normal",
@@ -59,6 +41,21 @@
                                        dic1,
                                        dic2
                                        ];
-    tabBarController.tabBarItemsAttributes = tabBarItemsAttributes;
+    
+    [self setViewControllers:naviArray withtabBarItemsAttributes:tabBarItemsAttributes];
 }
+
+
+
+- (void)setViewControllers:(NSArray *)array withtabBarItemsAttributes:(NSArray *)tabBarItemsAttributes
+{
+    ZLTabBarController *tabBarController = [[ZLTabBarController alloc]init];
+    tabBarController.tabBarItemsAttributes = tabBarItemsAttributes;
+    [tabBarController setViewControllers:array];
+    self.tabBarController = tabBarController;
+    [self addChildViewController:tabBarController];
+
+    [self.view addSubview:tabBarController.view];
+}
+
 @end
