@@ -5,7 +5,7 @@
 //  Created by 赵乐 on 16/8/19.
 //  Copyright © 2016年 zhaole. All rights reserved.
 //
-
+#import "ZLConfig.h"
 #import "ZLTabBarController.h"
 NSUInteger tabbarItemsCount = 0;
 
@@ -16,9 +16,9 @@ NSUInteger tabbarItemsCount = 0;
     [super viewDidLoad];
     //设置属性
     [self setTabBarItemsTextAttributes];
-    //设置tabBar
-    //[self setTabBar];
 }
+
+
 
 - (void)setTabBarItemsTextAttributes
 {

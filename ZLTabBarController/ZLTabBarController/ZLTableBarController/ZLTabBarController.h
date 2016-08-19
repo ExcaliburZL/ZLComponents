@@ -12,6 +12,9 @@ static NSString *const ZLTabBarItemImage = @"tabBarItemImage";
 static NSString *const ZLTabBarItemSelectedImage = @"tabBarItemSelectedImage";
 
 @interface ZLTabBarController : UITabBarController
+
 @property (nonatomic, readwrite, copy) NSArray *viewControllers;
 @property (nonatomic, copy) NSArray *tabBarItemsAttributes;
+
+
 @end

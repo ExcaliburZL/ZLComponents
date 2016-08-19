@@ -10,7 +10,7 @@
 #import "ZLTVCO.h"
 #import "ZLTVCT.h"
 #import "ZLTabBarController.h"
-
+#import "ZLConfig.h"
 @interface Index ()
 @property (nonatomic,strong) ZLTabBarController *tabBarController;
 @end
@@ -24,30 +24,15 @@
     ZLTVCO *one = [[ZLTVCO alloc]init];
     ZLTVCT *two = [[ZLTVCT alloc]init];
     
-    NSArray *naviArray = [self navigationControllers:@[one,two]];
+    ZLConfig *config = [[ZLConfig alloc]init];
+    NSArray *naviArray = [config navigationControllers:@[one,two]];
     [self setViewControllers:naviArray];
 }
 
-- (NSArray *)navigationControllers:(NSArray *)array
-{
-    NSMutableArray *ma = [NSMutableArray array];
-    for (id objController in array)
-    {
-        UIViewController *vc = [[UINavigationController alloc]initWithRootViewController:objController];
-        [ma addObject:vc];
-    }
-    return [ma copy];
-}
 
 
 - (void)setViewControllers:(NSArray *)array
 {
-    //get all controllers
-//    ZLTVCO *one = [[ZLTVCO alloc]init];
-//    UIViewController *first = [[UINavigationController alloc]initWithRootViewController:one];
-//    ZLTVCT *two = [[ZLTVCT alloc]init];
-//    UIViewController *scond = [[UINavigationController alloc]initWithRootViewController:two];
-    
     ZLTabBarController *tabBarController = [[ZLTabBarController alloc]init];
     [self setTabBarForControllers:tabBarController];
     [tabBarController setViewControllers:array];

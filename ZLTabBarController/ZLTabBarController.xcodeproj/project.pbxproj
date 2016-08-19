@@ -15,6 +15,7 @@
 		460D0B521D66F0BA00127E6A /* ZLTVCT.m in Sources */ = {isa = PBXBuildFile; fileRef = 460D0B501D66F0BA00127E6A /* ZLTVCT.m */; };
 		460D0B561D672C4200127E6A /* ZLTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 460D0B551D672C4200127E6A /* ZLTabBarController.m */; };
 		460D0B591D672C6600127E6A /* Index.m in Sources */ = {isa = PBXBuildFile; fileRef = 460D0B581D672C6600127E6A /* Index.m */; };
+		460D0B5C1D67445800127E6A /* ZLConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 460D0B5B1D67445800127E6A /* ZLConfig.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		460D0B551D672C4200127E6A /* ZLTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZLTabBarController.m; path = ZLTableBarController/ZLTabBarController.m; sourceTree = "<group>"; };
 		460D0B571D672C6600127E6A /* Index.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Index.h; sourceTree = "<group>"; };
 		460D0B581D672C6600127E6A /* Index.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Index.m; sourceTree = "<group>"; };
+		460D0B5A1D67445800127E6A /* ZLConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZLConfig.h; path = ZLTableBarController/ZLConfig.h; sourceTree = "<group>"; };
+		460D0B5B1D67445800127E6A /* ZLConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZLConfig.m; path = ZLTableBarController/ZLConfig.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,8 @@
 			children = (
 				460D0B541D672C4200127E6A /* ZLTabBarController.h */,
 				460D0B551D672C4200127E6A /* ZLTabBarController.m */,
+				460D0B5A1D67445800127E6A /* ZLConfig.h */,
+				460D0B5B1D67445800127E6A /* ZLConfig.m */,
 			);
 			name = ZLTableBarController;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				460D0B591D672C6600127E6A /* Index.m in Sources */,
+				460D0B5C1D67445800127E6A /* ZLConfig.m in Sources */,
 				460D0B561D672C4200127E6A /* ZLTabBarController.m in Sources */,
 				460D0B521D66F0BA00127E6A /* ZLTVCT.m in Sources */,
 				460D0B041D66B36C00127E6A /* AppDelegate.m in Sources */,
