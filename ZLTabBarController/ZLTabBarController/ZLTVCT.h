@@ -1,6 +1,6 @@
 //
-//  ViewController.h
-//  ZLTabBarController
+//  ZLTVCT.h
+//  TabBarDemo
 //
 //  Created by 赵乐 on 16/8/19.
 //  Copyright © 2016年 zhaole. All rights reserved.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ZLTVCT : UITableViewController
 
 @end
-

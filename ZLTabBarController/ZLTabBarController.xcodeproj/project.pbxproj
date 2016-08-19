@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		460D0B011D66B36C00127E6A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 460D0B001D66B36C00127E6A /* main.m */; };
 		460D0B041D66B36C00127E6A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 460D0B031D66B36C00127E6A /* AppDelegate.m */; };
-		460D0B071D66B36C00127E6A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 460D0B061D66B36C00127E6A /* ViewController.m */; };
-		460D0B0A1D66B36C00127E6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460D0B081D66B36C00127E6A /* Main.storyboard */; };
 		460D0B0C1D66B36C00127E6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 460D0B0B1D66B36C00127E6A /* Assets.xcassets */; };
 		460D0B0F1D66B36C00127E6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460D0B0D1D66B36C00127E6A /* LaunchScreen.storyboard */; };
+		460D0B181D66B63400127E6A /* ZLTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 460D0B171D66B63400127E6A /* ZLTabBarController.m */; };
+		460D0B1B1D66D61600127E6A /* ZLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 460D0B1A1D66D61600127E6A /* ZLTabBar.m */; };
+		460D0B511D66F0BA00127E6A /* ZLTVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 460D0B4E1D66F0BA00127E6A /* ZLTVCO.m */; };
+		460D0B521D66F0BA00127E6A /* ZLTVCT.m in Sources */ = {isa = PBXBuildFile; fileRef = 460D0B501D66F0BA00127E6A /* ZLTVCT.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +22,17 @@
 		460D0B001D66B36C00127E6A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		460D0B021D66B36C00127E6A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		460D0B031D66B36C00127E6A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		460D0B051D66B36C00127E6A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		460D0B061D66B36C00127E6A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		460D0B091D66B36C00127E6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		460D0B0B1D66B36C00127E6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		460D0B0E1D66B36C00127E6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		460D0B101D66B36C00127E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		460D0B161D66B63400127E6A /* ZLTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLTabBarController.h; sourceTree = "<group>"; };
+		460D0B171D66B63400127E6A /* ZLTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLTabBarController.m; sourceTree = "<group>"; };
+		460D0B191D66D61600127E6A /* ZLTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLTabBar.h; sourceTree = "<group>"; };
+		460D0B1A1D66D61600127E6A /* ZLTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLTabBar.m; sourceTree = "<group>"; };
+		460D0B4D1D66F0BA00127E6A /* ZLTVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLTVCO.h; sourceTree = "<group>"; };
+		460D0B4E1D66F0BA00127E6A /* ZLTVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLTVCO.m; sourceTree = "<group>"; };
+		460D0B4F1D66F0BA00127E6A /* ZLTVCT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLTVCT.h; sourceTree = "<group>"; };
+		460D0B501D66F0BA00127E6A /* ZLTVCT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLTVCT.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,15 +65,17 @@
 		460D0AFE1D66B36C00127E6A /* ZLTabBarController */ = {
 			isa = PBXGroup;
 			children = (
+				460D0B4C1D66F07B00127E6A /* TableViewDemo */,
 				460D0B021D66B36C00127E6A /* AppDelegate.h */,
 				460D0B031D66B36C00127E6A /* AppDelegate.m */,
-				460D0B051D66B36C00127E6A /* ViewController.h */,
-				460D0B061D66B36C00127E6A /* ViewController.m */,
-				460D0B081D66B36C00127E6A /* Main.storyboard */,
 				460D0B0B1D66B36C00127E6A /* Assets.xcassets */,
 				460D0B0D1D66B36C00127E6A /* LaunchScreen.storyboard */,
 				460D0B101D66B36C00127E6A /* Info.plist */,
 				460D0AFF1D66B36C00127E6A /* Supporting Files */,
+				460D0B161D66B63400127E6A /* ZLTabBarController.h */,
+				460D0B171D66B63400127E6A /* ZLTabBarController.m */,
+				460D0B191D66D61600127E6A /* ZLTabBar.h */,
+				460D0B1A1D66D61600127E6A /* ZLTabBar.m */,
 			);
 			path = ZLTabBarController;
 			sourceTree = "<group>";
@@ -77,6 +86,17 @@
 				460D0B001D66B36C00127E6A /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		460D0B4C1D66F07B00127E6A /* TableViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				460D0B4D1D66F0BA00127E6A /* ZLTVCO.h */,
+				460D0B4E1D66F0BA00127E6A /* ZLTVCO.m */,
+				460D0B4F1D66F0BA00127E6A /* ZLTVCT.h */,
+				460D0B501D66F0BA00127E6A /* ZLTVCT.m */,
+			);
+			name = TableViewDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +158,6 @@
 			files = (
 				460D0B0F1D66B36C00127E6A /* LaunchScreen.storyboard in Resources */,
 				460D0B0C1D66B36C00127E6A /* Assets.xcassets in Resources */,
-				460D0B0A1D66B36C00127E6A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,23 +168,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				460D0B071D66B36C00127E6A /* ViewController.m in Sources */,
+				460D0B1B1D66D61600127E6A /* ZLTabBar.m in Sources */,
+				460D0B521D66F0BA00127E6A /* ZLTVCT.m in Sources */,
+				460D0B181D66B63400127E6A /* ZLTabBarController.m in Sources */,
 				460D0B041D66B36C00127E6A /* AppDelegate.m in Sources */,
 				460D0B011D66B36C00127E6A /* main.m in Sources */,
+				460D0B511D66F0BA00127E6A /* ZLTVCO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		460D0B081D66B36C00127E6A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				460D0B091D66B36C00127E6A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		460D0B0D1D66B36C00127E6A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -264,6 +278,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZLTabBarController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-4.ZLTabBarController";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -275,6 +290,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZLTabBarController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-4.ZLTabBarController";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -300,6 +316,7 @@
 				460D0B151D66B36C00127E6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

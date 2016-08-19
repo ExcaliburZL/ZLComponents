@@ -7,18 +7,63 @@
 //
 
 #import "AppDelegate.h"
+#import "ZLTVCO.h"
+#import "ZLTVCT.h"
+#import "ZLTabBarController.h"
+
 
 @interface AppDelegate ()
-
+@property (nonatomic,strong) ZLTabBarController *tabBarController;
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc]init];
+    self.window.frame = [UIScreen mainScreen].bounds;
+    [self setViewControllers];
+    [self.window setRootViewController:self.tabBarController];
+    [self.window makeKeyAndVisible];
     return YES;
 }
+
+- (void) setViewControllers
+{
+    //get all controllers
+    ZLTVCO *one = [[ZLTVCO alloc]init];
+    UIViewController *first = [[UINavigationController alloc]initWithRootViewController:one];
+    ZLTVCT *two = [[ZLTVCT alloc]init];
+    UIViewController *scond = [[UINavigationController alloc]initWithRootViewController:two];
+    
+    ZLTabBarController *tabBarController = [[ZLTabBarController alloc]init];
+    [self setTabBarForControllers:tabBarController];
+    [tabBarController setViewControllers:@[first,scond]];
+    self.tabBarController = tabBarController;
+  
+}
+
+- (void) setTabBarForControllers:(ZLTabBarController *) tabBarController
+{
+    //config tabBar for each ViewController
+    NSDictionary *dic1 = @{
+                           ZLTabBarItemTitle:@"Item1",
+                           ZLTabBarItemImage:@"message_normal",
+                           ZLTabBarItemSelectedImage:@"message_highlight"
+                           };
+    NSDictionary *dic2 = @{
+                           ZLTabBarItemTitle:@"Item2",
+                           ZLTabBarItemImage:@"home_normal",
+                           ZLTabBarItemSelectedImage:@"home_highlight"
+                           };
+    NSArray *tabBarItemsAttributes = @[
+                                       dic1,
+                                       dic2
+                                       ];
+    tabBarController.tabBarItemsAttributes = tabBarItemsAttributes;
+}
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
