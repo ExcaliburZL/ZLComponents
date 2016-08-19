@@ -17,28 +17,40 @@
 
 @implementation Index
 
-- (instancetype)init
+
+- (void)viewDidLoad
 {
-    self = [super init];
-    if (self) {
-        [self setViewControllers];
+    [super viewDidLoad];
+    ZLTVCO *one = [[ZLTVCO alloc]init];
+    ZLTVCT *two = [[ZLTVCT alloc]init];
+    
+    NSArray *naviArray = [self navigationControllers:@[one,two]];
+    [self setViewControllers:naviArray];
+}
+
+- (NSArray *)navigationControllers:(NSArray *)array
+{
+    NSMutableArray *ma = [NSMutableArray array];
+    for (id objController in array)
+    {
+        UIViewController *vc = [[UINavigationController alloc]initWithRootViewController:objController];
+        [ma addObject:vc];
     }
-    return self;
+    return [ma copy];
 }
 
 
-
-- (void)setViewControllers
+- (void)setViewControllers:(NSArray *)array
 {
     //get all controllers
-    ZLTVCO *one = [[ZLTVCO alloc]init];
-    UIViewController *first = [[UINavigationController alloc]initWithRootViewController:one];
-    ZLTVCT *two = [[ZLTVCT alloc]init];
-    UIViewController *scond = [[UINavigationController alloc]initWithRootViewController:two];
+//    ZLTVCO *one = [[ZLTVCO alloc]init];
+//    UIViewController *first = [[UINavigationController alloc]initWithRootViewController:one];
+//    ZLTVCT *two = [[ZLTVCT alloc]init];
+//    UIViewController *scond = [[UINavigationController alloc]initWithRootViewController:two];
     
     ZLTabBarController *tabBarController = [[ZLTabBarController alloc]init];
     [self setTabBarForControllers:tabBarController];
-    [tabBarController setViewControllers:@[first,scond]];
+    [tabBarController setViewControllers:array];
     self.tabBarController = tabBarController;
     [self addChildViewController:tabBarController];
 
