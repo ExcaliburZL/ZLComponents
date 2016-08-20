@@ -19,6 +19,11 @@ NSUInteger tabbarItemsCount = 0;
 }
 
 
+- (void)setViewControllers:(NSArray *)array withtabBarItemsAttributes:(NSArray *)tabBarItemsAttributes
+{
+    self.tabBarItemsAttributes = tabBarItemsAttributes;
+    self .viewControllers = array;
+}
 
 - (void)setTabBarItemsTextAttributes
 {

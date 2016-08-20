@@ -12,12 +12,9 @@
 #import "ZLTabBarController.h"
 #import "ZLConfig.h"
 @interface Index ()
-@property (nonatomic,strong) ZLTabBarController *tabBarController;
 @end
 
 @implementation Index
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -37,25 +34,17 @@
                            ZLTabBarItemImage:@"home_normal",
                            ZLTabBarItemSelectedImage:@"home_highlight"
                            };
+    
     NSArray *tabBarItemsAttributes = @[
                                        dic1,
                                        dic2
                                        ];
     
-    [self setViewControllers:naviArray withtabBarItemsAttributes:tabBarItemsAttributes];
-}
+    ZLTabBarController *a = [[ZLTabBarController alloc]init];
+    [a setViewControllers:naviArray withtabBarItemsAttributes:tabBarItemsAttributes];
+    [self addChildViewController:a];
+    [self.view addSubview:a.view];
 
-
-
-- (void)setViewControllers:(NSArray *)array withtabBarItemsAttributes:(NSArray *)tabBarItemsAttributes
-{
-    ZLTabBarController *tabBarController = [[ZLTabBarController alloc]init];
-    tabBarController.tabBarItemsAttributes = tabBarItemsAttributes;
-    [tabBarController setViewControllers:array];
-    self.tabBarController = tabBarController;
-    [self addChildViewController:tabBarController];
-
-    [self.view addSubview:tabBarController.view];
 }
 
 @end
