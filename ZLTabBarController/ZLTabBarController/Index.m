@@ -40,8 +40,8 @@
                                        dic2
                                        ];
     
-    ZLTabBarController *a = [[ZLTabBarController alloc]init];
-    [a setViewControllers:naviArray withtabBarItemsAttributes:tabBarItemsAttributes];
+
+    ZLTabBarController *a = [ZLTabBarController initWithControllers:naviArray  withTabBarItemsAttributes:tabBarItemsAttributes];
     [self addChildViewController:a];
     [self.view addSubview:a.view];
 

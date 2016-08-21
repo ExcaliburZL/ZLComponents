@@ -16,5 +16,6 @@ static NSString *const ZLTabBarItemSelectedImage = @"tabBarItemSelectedImage";
 @property (nonatomic, readwrite, copy) NSArray *viewControllers;
 @property (nonatomic, copy) NSArray *tabBarItemsAttributes;
 
-- (void)setViewControllers:(NSArray *)array withtabBarItemsAttributes:(NSArray *)tabBarItemsAttributes;
++ (ZLTabBarController *)initWithControllers:(NSArray *)cArray withTabBarItemsAttributes:(NSArray *)attributes;
+
 @end

@@ -18,11 +18,20 @@ NSUInteger tabbarItemsCount = 0;
     [self setTabBarItemsTextAttributes];
 }
 
-
-- (void)setViewControllers:(NSArray *)array withtabBarItemsAttributes:(NSArray *)tabBarItemsAttributes
++ (ZLTabBarController *)initWithControllers:(NSArray *)cArray withTabBarItemsAttributes:(NSArray *)attributes
 {
-    self.tabBarItemsAttributes = tabBarItemsAttributes;
-    self .viewControllers = array;
+    return [[ZLTabBarController alloc]initWithControllers:cArray withTabBarItemsAttributes: attributes];
+}
+
+- (ZLTabBarController *)initWithControllers:(NSArray *)cArray withTabBarItemsAttributes:(NSArray *)attributes
+{
+    self = [super init];
+    if (self) {
+        self.tabBarItemsAttributes = attributes;
+        self.viewControllers = cArray;
+
+    }
+    return self;
 }
 
 - (void)setTabBarItemsTextAttributes
