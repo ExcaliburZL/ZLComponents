@@ -16,7 +16,6 @@
 
     [super viewDidLoad];
     self.title = @"首页";
-    [self.navigationController.tabBarItem setBadgeValue:@"3"];
 
 }
 
