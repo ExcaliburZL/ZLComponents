@@ -31,7 +31,7 @@
                            TABBAR_SELECTES_IMAGE:@"friends_selected"
                            };
 
-    NSArray *tabBarItemsAttributes = @[dic1,dic2,dic2];
+    NSArray *tabBarItemsAttributes = @[dic1,dic2];
     
     //用户自定义字体颜色
     UIColor *textColor = [UIColor colorWithRed:0.600 green:0.663 blue:0.659 alpha:1.00];
