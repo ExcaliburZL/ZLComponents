@@ -15,7 +15,7 @@
 - (void)viewDidLoad {
 
     [super viewDidLoad];
-    self.title = @"首页";
+    self.title = @"朋友圈";
 
 }
 
@@ -30,7 +30,7 @@
 #pragma mark - Methods
 
 - (void)configureCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
-    [[cell textLabel] setText:[NSString stringWithFormat:@"%@ Controller Cell %ld", self.title, (long)indexPath.row]];
+    [[cell textLabel] setText:[NSString stringWithFormat:@"%@ 第%ld数据", self.title, (long)indexPath.row]];
 }
 
 #pragma mark - Table view

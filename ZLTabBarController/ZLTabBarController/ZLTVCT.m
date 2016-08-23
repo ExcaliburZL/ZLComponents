@@ -20,7 +20,7 @@
 #pragma mark - Methods
 
 - (void)configureCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
-    [[cell textLabel] setText:[NSString stringWithFormat:@"%@ Controller Cell %ld", self.title, (long)indexPath.row]];
+    [[cell textLabel] setText:[NSString stringWithFormat:@"第%ld朋友", (long)indexPath.row]];
 }
 
 

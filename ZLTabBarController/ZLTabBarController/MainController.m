@@ -33,17 +33,18 @@
 
     NSArray *tabBarItemsAttributes = @[dic1,dic2];
     
-    //用户自定义字体颜色
+    
+    //用户自定义字体颜色(默认灰色,选中后黑色)
     UIColor *textColor = [UIColor colorWithRed:0.600 green:0.663 blue:0.659 alpha:1.00];
     UIColor *selectedtextColor = [UIColor colorWithRed:0.890 green:0.220 blue:0.169 alpha:1.00];
     NSArray *textAttributes = @[textColor,selectedtextColor];
-    ZLTabBarController *a = [ZLTabBarController initWithControllers:array  withTabBarItemsAttributes:tabBarItemsAttributes withTextColorAttributes:textAttributes];
+
+    ZLTabBarController *tbC = [ZLTabBarController initWithControllers:array  withTabBarItemsAttributes:tabBarItemsAttributes withTextColorAttributes:textAttributes];
     //创建指定位置的红点
-    
-    [a handleBadgeWithStuts:BadgeHandleShow];
-    [a handleBadgeWithIndex:1 withStuts:BadgeHandleHide];
-    [self addChildViewController:a];
-    [self.view addSubview:a.view];
+    [tbC handleBadgeWithStuts:BadgeHandleShow];
+    [tbC handleBadgeWithIndex:1 withStuts:BadgeHandleHide];
+    [self addChildViewController:tbC];
+    [self.view addSubview:tbC.view];
 }
 
 @end
