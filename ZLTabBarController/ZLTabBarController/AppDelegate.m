@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "Index.h"
+#import "MainController.h"
 
 @interface AppDelegate ()
 
@@ -20,8 +20,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc]init];
     self.window.frame = [UIScreen mainScreen].bounds;
-    Index *index = [[Index alloc]init];
-    [self.window setRootViewController:index];
+    MainController *main = [[MainController alloc]init];
+    [self.window setRootViewController:main];
     [self.window makeKeyAndVisible];
     return YES;
 }

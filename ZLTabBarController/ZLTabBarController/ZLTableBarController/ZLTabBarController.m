@@ -17,20 +17,24 @@ NSUInteger tabbarItemsCount = 0;
 @implementation ZLTabBarController
 @synthesize viewControllers = _viewControllers;
 
-+ (ZLTabBarController *)initWithControllers:(NSArray *)cArray withTabBarItemsAttributes:(NSArray *)attributes withTextAttributes:( NSArray*)tArray
++ (ZLTabBarController *)initWithControllers:(NSArray *)viewControllers withTabBarItemsAttributes:(NSArray *)attributes withTextColorAttributes:(NSArray *)textAttributes
 {
-    return [[ZLTabBarController alloc]initWithControllers:cArray withTabBarItemsAttributes: attributes withTextAttributes:tArray];
+    return [[ZLTabBarController alloc]initWithControllers:viewControllers withTabBarItemsAttributes: attributes withTextColorAttributes:textAttributes];
 }
 
-- (ZLTabBarController *)initWithControllers:(NSArray *)cArray withTabBarItemsAttributes:(NSArray *)attributes withTextAttributes:(NSArray *)tArray
+- (ZLTabBarController *)initWithControllers:(NSArray *)viewControllers withTabBarItemsAttributes:(NSArray *)attributes withTextColorAttributes:(NSArray *)textAttributes
 {
     self = [super init];
     if (self)
     {
-       NSArray *naviArray = [self navigationControllers:cArray];
+        if (viewControllers.count != attributes.count) {
+            [NSException raise:@"initWithControllers method" format:@" The count of viewControllers  is must be equal to count of attributes 。 【中文】 viewControllers的个数与textAttributes的个数相同"];
+        }
+        NSArray *naviArray = [self navigationControllers:viewControllers];
         self.tabBarItemsAttributes = attributes;
         self.viewControllers = naviArray;
-        [self setTabBarItemsTextAttributes:tArray];
+        [self setTabBarItemsTextAttributes:textAttributes];
+        [self createAllBadge:naviArray.count];
     }
     return self;
 }
@@ -111,9 +115,9 @@ NSUInteger tabbarItemsCount = 0;
     for (UIViewController *viewController in viewControllers) {
         viewController.tabBarItem.tag = 2000 + idx+ 1;
         [self addOneChildViewController:viewController
-                              WithTitle:self.tabBarItemsAttributes[idx][ZLTabBarItemTitle]
-                        normalImageName:self.tabBarItemsAttributes[idx][ZLTabBarItemImage]
-                      selectedImageName:self.tabBarItemsAttributes[idx][ZLTabBarItemSelectedImage]];
+                              WithTitle:self.tabBarItemsAttributes[idx][TABBAR_TITLE]
+                        normalImageName:self.tabBarItemsAttributes[idx][TABBAR_IMAGE]
+                      selectedImageName:self.tabBarItemsAttributes[idx][TABBAR_SELECTES_IMAGE]];
         idx ++;
     }
 }
@@ -130,8 +134,7 @@ NSUInteger tabbarItemsCount = 0;
                         WithTitle:(NSString *)title
                   normalImageName:(NSString *)normalImageName
                 selectedImageName:(NSString *)selectedImageName
-{
-   
+{ 
     viewController.tabBarItem.title         = title;
     UIImage *normalImage = [UIImage imageNamed:normalImageName];
     normalImage = [normalImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];

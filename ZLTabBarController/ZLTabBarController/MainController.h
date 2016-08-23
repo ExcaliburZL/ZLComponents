@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Index : UIViewController
+@interface MainController : UIViewController
 
 @end

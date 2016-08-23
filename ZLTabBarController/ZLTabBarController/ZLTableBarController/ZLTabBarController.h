@@ -14,9 +14,9 @@ typedef NS_ENUM(NSInteger, BadgeHandle)
     BadgeHandleHide = 2
 };
 
-static NSString *const ZLTabBarItemTitle = @"tabBarItemTitle";
-static NSString *const ZLTabBarItemImage = @"tabBarItemImage";
-static NSString *const ZLTabBarItemSelectedImage = @"tabBarItemSelectedImage";
+#define TABBAR_TITLE            @"tabBarItemTitle"
+#define TABBAR_IMAGE            @"tabBarItemImage"
+#define TABBAR_SELECTES_IMAGE   @"tabBarItemSelectedImage"
 
 
 @interface ZLTabBarController : UITabBarController
@@ -26,7 +26,7 @@ static NSString *const ZLTabBarItemSelectedImage = @"tabBarItemSelectedImage";
 
 
 
-+ (ZLTabBarController *)initWithControllers:(NSArray *)cArray withTabBarItemsAttributes:(NSArray *)attributes  withTextAttributes:(NSArray<__kindof UIColor *> *)tArray;
++ (ZLTabBarController *)initWithControllers:(NSArray *)viewControllers withTabBarItemsAttributes:(NSArray *)attributes withTextColorAttributes:(NSArray *)textAttributes;
 - (void)handleBadgeWithStuts:(BadgeHandle) status;
 - (void)handleBadgeWithIndex:(NSUInteger)index withStuts:(BadgeHandle) status;
 @end

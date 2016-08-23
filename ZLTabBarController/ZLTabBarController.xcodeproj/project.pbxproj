@@ -14,7 +14,7 @@
 		460D0B511D66F0BA00127E6A /* ZLTVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 460D0B4E1D66F0BA00127E6A /* ZLTVCO.m */; };
 		460D0B521D66F0BA00127E6A /* ZLTVCT.m in Sources */ = {isa = PBXBuildFile; fileRef = 460D0B501D66F0BA00127E6A /* ZLTVCT.m */; };
 		460D0B561D672C4200127E6A /* ZLTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 460D0B551D672C4200127E6A /* ZLTabBarController.m */; };
-		46CA06D31D6AF9D70092E7DF /* Index.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CA06D21D6AF9D70092E7DF /* Index.m */; };
+		46CA06D31D6AF9D70092E7DF /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CA06D21D6AF9D70092E7DF /* MainController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,8 +31,8 @@
 		460D0B501D66F0BA00127E6A /* ZLTVCT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLTVCT.m; sourceTree = "<group>"; };
 		460D0B541D672C4200127E6A /* ZLTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZLTabBarController.h; path = ZLTableBarController/ZLTabBarController.h; sourceTree = "<group>"; };
 		460D0B551D672C4200127E6A /* ZLTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZLTabBarController.m; path = ZLTableBarController/ZLTabBarController.m; sourceTree = "<group>"; };
-		46CA06D11D6AF9D70092E7DF /* Index.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Index.h; sourceTree = "<group>"; };
-		46CA06D21D6AF9D70092E7DF /* Index.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Index.m; sourceTree = "<group>"; };
+		46CA06D11D6AF9D70092E7DF /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
+		46CA06D21D6AF9D70092E7DF /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +65,6 @@
 		460D0AFE1D66B36C00127E6A /* ZLTabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				46CA06D11D6AF9D70092E7DF /* Index.h */,
-				46CA06D21D6AF9D70092E7DF /* Index.m */,
 				460D0B531D672BF600127E6A /* ZLTableBarController */,
 				460D0B4C1D66F07B00127E6A /* TableViewDemo */,
 				460D0B021D66B36C00127E6A /* AppDelegate.h */,
@@ -90,6 +88,8 @@
 		460D0B4C1D66F07B00127E6A /* TableViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				46CA06D11D6AF9D70092E7DF /* MainController.h */,
+				46CA06D21D6AF9D70092E7DF /* MainController.m */,
 				460D0B4D1D66F0BA00127E6A /* ZLTVCO.h */,
 				460D0B4E1D66F0BA00127E6A /* ZLTVCO.m */,
 				460D0B4F1D66F0BA00127E6A /* ZLTVCT.h */,
@@ -176,7 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46CA06D31D6AF9D70092E7DF /* Index.m in Sources */,
+				46CA06D31D6AF9D70092E7DF /* MainController.m in Sources */,
 				460D0B561D672C4200127E6A /* ZLTabBarController.m in Sources */,
 				460D0B521D66F0BA00127E6A /* ZLTVCT.m in Sources */,
 				460D0B041D66B36C00127E6A /* AppDelegate.m in Sources */,

@@ -14,6 +14,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"朋友";
 }
 
 #pragma mark - Methods
