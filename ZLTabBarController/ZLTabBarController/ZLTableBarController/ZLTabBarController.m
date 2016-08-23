@@ -9,30 +9,32 @@
 
 
 #import "ZLTabBarController.h"
-
+#define DEF_COLOR  [UIColor grayColor];
+#define DEF_SELECT_COLOR    [UIColor blackColor];
 
 NSUInteger tabbarItemsCount = 0;
 
 @implementation ZLTabBarController
 @synthesize viewControllers = _viewControllers;
 
-+ (ZLTabBarController *)initWithControllers:(NSArray *)cArray withTabBarItemsAttributes:(NSArray *)attributes
++ (ZLTabBarController *)initWithControllers:(NSArray *)cArray withTabBarItemsAttributes:(NSArray *)attributes withTextAttributes:( NSArray*)tArray
 {
-    return [[ZLTabBarController alloc]initWithControllers:cArray withTabBarItemsAttributes: attributes];
+    return [[ZLTabBarController alloc]initWithControllers:cArray withTabBarItemsAttributes: attributes withTextAttributes:tArray];
 }
 
-- (ZLTabBarController *)initWithControllers:(NSArray *)cArray withTabBarItemsAttributes:(NSArray *)attributes
+- (ZLTabBarController *)initWithControllers:(NSArray *)cArray withTabBarItemsAttributes:(NSArray *)attributes withTextAttributes:(NSArray *)tArray
 {
     self = [super init];
     if (self)
     {
-        NSArray *naviArray = [self navigationControllers:cArray];
+       NSArray *naviArray = [self navigationControllers:cArray];
         self.tabBarItemsAttributes = attributes;
         self.viewControllers = naviArray;
-        [self createAllBadge:attributes.count];
-     }
+        [self setTabBarItemsTextAttributes:tArray];
+    }
     return self;
 }
+
 
 - (void)handleBadgeWithIndex:(NSUInteger)index withStuts:(BadgeHandle) status
 {
@@ -99,21 +101,11 @@ NSUInteger tabbarItemsCount = 0;
     }
 }
 
-- (void)setTabBarItemsTextAttributes
-{
-    NSDictionary *normalDic   = @{NSForegroundColorAttributeName:[UIColor grayColor]};
-    NSDictionary *selectedDic = @{NSForegroundColorAttributeName:[UIColor blackColor]};
-    UITabBarItem *tabBarItem = [UITabBarItem appearance];
-    //TODO:general status ( custom text color )
-    [tabBarItem setTitleTextAttributes:normalDic forState:UIControlStateNormal];
-    //TODO:selected status ( custom text color )
-    [tabBarItem setTitleTextAttributes:selectedDic forState:UIControlStateSelected];
-}
+
 
 - (void)setViewControllers:(NSArray *)viewControllers
 {
     _viewControllers = [viewControllers copy];
-
     tabbarItemsCount = [viewControllers count];
     NSUInteger idx = 0;
     for (UIViewController *viewController in viewControllers) {
@@ -149,6 +141,58 @@ NSUInteger tabbarItemsCount = 0;
     viewController.tabBarItem.selectedImage = selectedImage;
     [self addChildViewController:viewController];
     
+}
+
+//检查传入的颜色数组
+- (NSArray *)checkColorArray:(NSArray *)array
+{
+    UIColor *textColor = DEF_COLOR;
+    UIColor *selectedtextColor = DEF_SELECT_COLOR;
+
+    if (array.count == 0 )
+    {
+        return @[textColor,selectedtextColor];
+    }
+    if (array.count == 1) {
+        if (![[array firstObject] isKindOfClass:[UIColor class]])
+        {
+            [NSException raise:@"showBadgeWithIndex method" format:@"必须传入是UIColor类型"];
+        }
+        textColor = [array firstObject];
+        selectedtextColor = DEF_SELECT_COLOR;
+        return @[textColor,selectedtextColor];
+    }
+    if (array.count == 2)
+    {
+    
+        for (id element in array)
+        {
+            if (![element  isKindOfClass:[UIColor class]]) {
+                 [NSException raise:@"showBadgeWithIndex method" format:@"必须传入是UIColor类型"];
+            }
+        }
+        textColor = array[0];
+        selectedtextColor = array[1];
+        return @[textColor,selectedtextColor];
+
+    }
+    else
+    {
+        [NSException raise:@"showBadgeWithIndex method" format:@"请检查传入的参数个数"];
+    }
+    return @[textColor,selectedtextColor];
+
+}
+
+- (void)setTabBarItemsTextAttributes:(NSArray<UIColor *> *)tArray
+{
+
+    NSArray *colorArray = [self checkColorArray:tArray];
+    NSDictionary *normalDic   = @{NSForegroundColorAttributeName:colorArray[0]};
+    NSDictionary *selectedDic = @{NSForegroundColorAttributeName:colorArray[1]};
+    UITabBarItem *tabBarItem = [UITabBarItem appearance];
+    [tabBarItem setTitleTextAttributes:normalDic forState:UIControlStateNormal];
+    [tabBarItem setTitleTextAttributes:selectedDic forState:UIControlStateSelected];
 }
 
 

@@ -13,7 +13,6 @@
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad {
-    self.title = @"测试2";
     [super viewDidLoad];
 }
 
